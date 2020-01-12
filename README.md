@@ -6,8 +6,9 @@ Montaje de un servidor en DigitalOcean con Ubuntu 18.04, Nginx, php 7.3 y cerbot
  - Este link te dara 2 meses gratis de uso.
  
 ## Una vez creado el droplet
-1. Ingresa a la consola que manejas y escribe ssh root@**IP asignada**
-2. Una vez dentro del terminal siempre es aconsejable actualizar la instalación de Ubuntu, para esto hacemos:
+1. Cambia los DNS del dominio para que apunte a tu droplet
+2. Ingresa a la consola que manejas y escribe ssh root@**IP asignada**
+3. Una vez dentro del terminal siempre es aconsejable actualizar la instalación de Ubuntu, para esto hacemos:
 ```
 sudo apt update
 sudo apt upgrade
@@ -299,3 +300,7 @@ nano /etc/supervisor/supervisord.conf
 `chmod=0770`
 - Reiniciamos :
 `sudo service supervisor restart`
+
+#### Y eso es todo por el momento, el siguente instaleremos websocket y lo dejaremos funcionando.
+
+## Saludos y un buen día!
