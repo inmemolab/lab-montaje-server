@@ -174,6 +174,11 @@ sudo apt upgrade
 `rm -r html`
 - Instalación de Laravel
 `composer create-project --prefer-dist laravel/laravel DOMINIO`
+`cd /var/www/DOMINIO`
+- Instalación del Frontend Scaffolding
+`composer require laravel/ui --dev`
+`php artisan ui vue`
+
 - Normalmente nuestro lío siempre son los permisos de carpetas, estos son los que yo uso y por lo general casi todos hacemos procesos diferentes, estos pueden cambiar.
 ```
 sudo chown -R www-data:www-data /var/www/DOMINIO
