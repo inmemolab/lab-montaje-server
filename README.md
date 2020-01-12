@@ -1,9 +1,11 @@
 # Montaje-server
-Montaje de un servidor en DigitalOcean con Ubuntu 18.04, Nginx, php 7.3 y cerbot  para Laravel + Vue + y Pre-configuracion de Websocket 
+Montaje de un servidor en DigitalOcean con Ubuntu 18.04, Nginx, php 7.3 y cerbot  para Laravel + Vue + y Pre-configuración de Websocket.
+
+ [Si no tienes una cuenta en DigitalOcean][1]
  
-## Una ves creado el droplet
+## Una vez creado el droplet
 1. Ingresa a la consola que manejas y escribe ssh root@**IP asignada**
-2. Una vez dentro del terminal siempre es aconsejable actualizar la instalacion de Ubuntu, para esto hacemos:
+2. Una vez dentro del terminal siempre es aconsejable actualizar la instalación de Ubuntu, para esto hacemos:
 ```
 sudo apt update
 sudo apt upgrade
@@ -39,7 +41,7 @@ sudo ufw allow OpenSSH
 | MySQL  | TCP  | 3306  | All IPv4  |All IPv6  |
 | Websocket  | TCP  | 6001  | All IPv4  |3306  |
 
-- **Importante:** Habilitamos nuestra ip de nuestra casa para poder acceder a la mysql desde el programa que usemos para manejo de base de datos.
+- **Importante:** Habilitamos nuestra IP de nuestra casa para poder acceder a la mysql desde el programa que usemos para manejo de base de datos.
 `sudo ufw allow from **IP que usas en tu casa** to any port 3306`
 
 ###### Habilitamos el UFW de Nginx
@@ -55,7 +57,7 @@ sudo apt update
 sudo apt install -y php7.3 php7.3-cli php7.3-common php7.3-curl php7.3-mysql php7.3-odbc php7.3-pgsql php7.3-sybase php7.3-mbstring php7.3-fpm php7.3-xml php7.3-xmlrpc php7.3-xsl php7.3-zip php7.3-opcache php7.3-tidy php7.3-bcmath php7.3-gd php7.3-soap php7.3-imap php7.3-intl php7.3-recode php7.3-bz2 php7.3-json php7.3-readline php7.3-imagick php7.3-dom php7.3-simplexml php7.3-ssh2 php7.3-xmlreader php7.3-exif php7.3-ftp php7.3-iconv php7.3-posix php7.3-sockets php7.3-tokenizer php7.3-dev 
 ```
 
-## Instalamos complementos que usaremos mas adelante
+## Instalamos complementos que usaremos más adelante
 ```
 sudo apt update
 sudo apt install redis-server -y
@@ -107,23 +109,23 @@ rm -r /var/www/descargas
 curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
-- Verificamos la instalacion:
+- Verificamos la instalación:
 `node -v`
 `npm -v`
 
 ## Generamos una clave para poder operar con GIT 
 `ssh-keygen -t rsa`
-- Podemos aceder a las claves con:
+- Podemos acceder a las claves con:
 `cat /root/.ssh/id_rsa.pub`
 `cat /root/.ssh/id_rsa`
 
-## Creamos los usuarios que podran operer con git
+## Creamos los usuarios que podrán operar con git
 ```
 git config --global user.email CORREO ELECTRONICO
 git config --global user.name USUARIO
 ```
 
-**Nota:** Si usas github debes pegar la clave publica en su plataforma, asi podras conectarte y enviar los push. 
+**Nota:** Si usas github debes pegar la clave pública en su plataforma, así podrás conectarte y enviar los push. 
 
 ## Instalamos Cerbot
 ```
@@ -134,7 +136,7 @@ sudo apt install python-certbot-nginx
 
 ## Habilitamos nuestro sitio en Nginx
 `sudo nano /etc/nginx/sites-available/DOMINIO`
-- Provicionalmente ponemos estas lineas mientras creamos los certificados.
+- Provisionalmente ponemos estas líneas mientras creamos los certificados.
 ```
 server {
 
@@ -149,7 +151,7 @@ server {
 }
 ```
 `sudo ln -s /etc/nginx/sites-available/DOMINIO /etc/nginx/sites-enabled/`
-- Quitamos ellink al default
+- Quitamos el link al default
 `unlink /etc/nginx/sites-enabled/default`
 - Editamos el nginx.conf
 `sudo nano /etc/nginx/nginx.conf`
@@ -170,9 +172,9 @@ sudo apt upgrade
 `cd /var/www`
 - Yo casi siempre borro lo que no necesito y trato de mantener mi servidor bien organizado, asi que yo borro siempre esta carpeta:
 `rm -r html`
-- Instalemos Laravel
+- Instalación de Laravel
 `composer create-project --prefer-dist laravel/laravel DOMINIO`
-- Normalmente nuestro lio siempre son los permisos de carpetas, estos son los que yo uso y por lo general casi todos hacemos procesos diferentes, estos pueden cambiar.
+- Normalmente nuestro lío siempre son los permisos de carpetas, estos son los que yo uso y por lo general casi todos hacemos procesos diferentes, estos pueden cambiar.
 ```
 sudo chown -R www-data:www-data /var/www/DOMINIO
 sudo find /var/www/DOMINIO/ -type d -exec chmod 755 {} \;
@@ -188,10 +190,10 @@ sudo find /var/www/DOMINIO/ -type d -exec chmod 775 {} \;
 ## Creamos nuestros certificados
 `sudo certbot --nginx -d DOMINIO.com -d www.DOMINIO.com`
 
-## Editamos nuestra configuracion del sitio en Nginx
+## Editamos nuestra configuración del sitio en Nginx
 `sudo nano /etc/nginx/sites-available/DOMINIO`
 - **OJO** debemos tener en cuenta donde quedaron los certificados para dejar las mismas rutas.
-- Esta configuracion tiene listo el manejo de websocket. Esto no afecta si no usas websocket, asi que si no quieres usar websocket y no quieres que este presente, puedes cambiar esta configuracion.
+- Esta configuración tiene listo el manejo de websocket. Esto no afecta si no usas websocket, asi que si no quieres usar websocket y no quieres que este presente, puedes cambiar esta configuracion.
 
 ```
 map $http_upgrade $type {
@@ -273,7 +275,7 @@ git remote add origin COPIAMOS LA RUTA DEL REPOSITORIO
 git remote -v
 git push -u origin master
 ```
-- Comandos que podremos usar mas adelante con git:
+- Comandos que podremos usar más adelante con git:
 ```
 git fetch --all
 git reset --hard origin/master
