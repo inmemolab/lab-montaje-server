@@ -5,6 +5,9 @@ Montaje de el droplet en DigitalOcean con Ubuntu 18.04, Nginx, php 7.3 y cerbot 
 
  - Este link te dara 2 meses gratis de uso.
  
+ ## Tutorial para crear un servidor o droplet
+ [Link de youtube con el videotutorial](https://youtu.be/Kh7ujZiaOk8)
+ 
 ## Una vez creado el droplet
 1. Cambia los DNS del dominio para que apunte a tu droplet
 2. Ingresa a la consola que manejas y escribe ssh root@**IP asignada**
