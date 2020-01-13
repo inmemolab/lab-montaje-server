@@ -302,5 +302,3 @@ nano /etc/supervisor/supervisord.conf
 `sudo service supervisor restart`
 
 #### Y eso es todo por el momento, el siguente instaleremos websocket y lo dejaremos funcionando.
-
-## Saludos y un buen día!
