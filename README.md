@@ -1,5 +1,5 @@
 # Montaje-Droplet
-Montaje de un servidor en DigitalOcean con Ubuntu 18.04, Nginx, php 7.3 y cerbot  para Laravel + Vue + y Pre-configuración de Websocket.
+Montaje de el droplet en DigitalOcean con Ubuntu 18.04, Nginx, php 7.3 y cerbot  para Laravel + Vue + y Pre-configuración de Websocket.
 
  [Si no tienes una cuenta en DigitalOcean](https://m.do.co/c/1c13fe7e733c)
 
