@@ -1,9 +1,12 @@
-# Montaje-server
-Montaje de un servidor en DigitalOcean con Ubuntu 18.04, Nginx, php 7.3 y cerbot  para Laravel + Vue + y Pre-configuración de Websocket.
+# Montaje-Droplet
+Montaje de el droplet en DigitalOcean con Ubuntu 18.04, Nginx, php 7.3 y cerbot  para Laravel + Vue + y Pre-configuración de Websocket.
 
  [Si no tienes una cuenta en DigitalOcean](https://m.do.co/c/1c13fe7e733c)
 
  - Este link te dara 2 meses gratis de uso.
+ 
+ ## Tutorial para crear un servidor o droplet
+ [Link de youtube con el videotutorial](https://youtu.be/Kh7ujZiaOk8)
  
 ## Una vez creado el droplet
 1. Cambia los DNS del dominio para que apunte a tu droplet
@@ -66,6 +69,23 @@ sudo apt update
 sudo apt install redis-server -y
 sudo apt install supervisor -y
 ```
+
+## Instalamos COMPOSER
+```
+sudo mkdir -p /var/www/descargas
+cd /var/www/descargas
+sudo apt install composer -y
+```
+
+## Instalamos Node
+```
+curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
+sudo apt-get install -y nodejs
+```
+- Verificamos la instalación:
+`node -v`
+`npm -v`
+rm -r /var/www/descargas
 
 ## Editamos el PHP FPM
 `sudo nano /etc/php/7.3/fpm/php.ini`
@@ -302,5 +322,3 @@ nano /etc/supervisor/supervisord.conf
 `sudo service supervisor restart`
 
 #### Y eso es todo por el momento, el siguente instaleremos websocket y lo dejaremos funcionando.
-
-## Saludos y un buen día!
