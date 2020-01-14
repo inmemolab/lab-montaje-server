@@ -127,18 +127,6 @@ FLUSH PRIVILEGES;
 exit
 ```
 
-## Instalamos COMPOSER
-```
-sudo mkdir -p /var/www/descargas
-cd /var/www/descargas
-rm -r /var/www/descargas
-curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
-sudo apt-get install -y nodejs
-```
-- Verificamos la instalación:
-`node -v`
-`npm -v`
-
 ## Generamos una clave para poder operar con GIT 
 `ssh-keygen -t rsa`
 - Podemos acceder a las claves con:
