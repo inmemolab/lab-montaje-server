@@ -82,13 +82,13 @@ sudo service php7.3-fpm restart
 ## Instalamos MYSQL
 
 ```
-sudo apt-get -y install mysql-server
+sudo apt-get -y install mysql-server-5.7
 sudo mysql
 SELECT user,authentication_string,plugin,host FROM mysql.user;
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'CONTRASEÑA';
 FLUSH PRIVILEGES;
 SELECT user,authentication_string,plugin,host FROM mysql.user;
-exit
+
 ```
 - Entramos como administrador y creamos un segundo usuario:
 ```
