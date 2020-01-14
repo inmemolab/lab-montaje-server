@@ -87,6 +87,7 @@ sudo apt-get install -y nodejs
 `npm -v`
 rm -r /var/www/descargas
 
+
 ## Editamos el PHP FPM
 `sudo nano /etc/php/7.3/fpm/php.ini`
 
