@@ -85,7 +85,7 @@ sudo apt-get install -y nodejs
 - Verificamos la instalación:
 `node -v`
 `npm -v`
-rm -r /var/www/descargas
+`rm -r /var/www/descargas`
 
 
 ## Editamos el PHP FPM
