@@ -1,3 +1,5 @@
+<p align="center"><img src="https://enmemolab.com/app/github/starter.png"></p>
+
 # Montaje-Droplet
 Montaje de el droplet en DigitalOcean con Ubuntu 18.04, Nginx, php 7.3 y cerbot  para Laravel + Vue + y Pre-configuración de Websocket.
 
