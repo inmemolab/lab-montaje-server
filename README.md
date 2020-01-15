@@ -185,11 +185,16 @@ sudo apt upgrade
 - Yo casi siempre borro lo que no necesito y trato de mantener mi servidor bien organizado, asi que yo borro siempre esta carpeta:
 `rm -r html`
 - Instalación de Laravel
-`composer create-project --prefer-dist laravel/laravel DOMINIO`
-`cd /var/www/DOMINIO`
+```
+composer create-project --prefer-dist laravel/laravel DOMINIO
+cd /var/www/DOMINIO
+```
+
 - Instalación del Frontend Scaffolding
-`composer require laravel/ui --dev`
-`php artisan ui vue`
+```
+composer require laravel/ui --dev
+php artisan ui vue
+```
 
 - Normalmente nuestro lío siempre son los permisos de carpetas, estos son los que yo uso y por lo general casi todos hacemos procesos diferentes, estos pueden cambiar.
 ```
@@ -279,6 +284,8 @@ server {
     # } # managed by Certbot
 }
 ```
+- **OJO** debemos reiniciar Nginx
+`sudo nginx -s reload`
 
 ## Iniciamos nuestro repositorio y hacemos nuestro primer push
 1.  Vamos a GitHub y creamos un repositorio VACIO.
