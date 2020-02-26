@@ -64,6 +64,11 @@ sudo apt install software-properties-common
 sudo apt update
 sudo apt install -y php7.3 php7.3-cli php7.3-common php7.3-curl php7.3-mysql php7.3-odbc php7.3-pgsql php7.3-sybase php7.3-mbstring php7.3-fpm php7.3-xml php7.3-xmlrpc php7.3-xsl php7.3-zip php7.3-opcache php7.3-tidy php7.3-bcmath php7.3-gd php7.3-soap php7.3-imap php7.3-intl php7.3-recode php7.3-bz2 php7.3-json php7.3-readline php7.3-imagick php7.3-dom php7.3-simplexml php7.3-ssh2 php7.3-xmlreader php7.3-exif php7.3-ftp php7.3-iconv php7.3-posix php7.3-sockets php7.3-tokenizer php7.3-dev 
 ```
+```
+sudo apt-get install python
+sudo apt-get install libglib2.0-dev
+sudo apt-get install -y libv8-dev
+```
 ## Editamos el PHP FPM
 `sudo nano /etc/php/7.3/fpm/php.ini`
 
