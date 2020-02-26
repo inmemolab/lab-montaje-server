@@ -67,7 +67,6 @@ sudo apt install -y php7.3 php7.3-cli php7.3-common php7.3-curl php7.3-mysql php
 ```
 sudo apt-get install python
 sudo apt-get install libglib2.0-dev
-sudo apt-get install -y libv8-dev
 ```
 ## Editamos el PHP FPM
 `sudo nano /etc/php/7.3/fpm/php.ini`
