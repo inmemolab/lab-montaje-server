@@ -206,8 +206,7 @@ php artisan ui vue
 
 - Dar permiso al usuario, y pegar el codigo justo debajo de root
 ```
-sudo nano /etc/sudoers
-USUARIO    ALL=(ALL:ALL) ALL
+sudo adduser USER www-data
 ```
 ```
 sudo chgrp www-data /var
