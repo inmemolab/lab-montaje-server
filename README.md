@@ -203,7 +203,20 @@ php artisan ui vue
 ```
 
 - Normalmente nuestro lío siempre son los permisos de carpetas, estos son los que yo uso y por lo general casi todos hacemos procesos diferentes, estos pueden cambiar.
+
+- Dar permiso al usuario, y pegar el codigo justo debajo de root
 ```
+sudo nano /etc/sudoers
+USUARIO    ALL=(ALL:ALL) ALL
+```
+```
+sudo chgrp www-data /var
+sudo chgrp -R www-data /var/www
+sudo chgrp -R www-data /var/www/DOMINIO
+sudo chmod 775 /var
+sudo chmod 775 /var/www
+sudo chmod 775 /var/www/DOMINIO
+
 sudo chown -R www-data:www-data /var/www/DOMINIO
 sudo find /var/www/DOMINIO/ -type d -exec chmod 755 {} \;
 sudo find /var/www/DOMINIO/ -type f -exec chmod 644 {} \;
