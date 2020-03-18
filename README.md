@@ -94,7 +94,7 @@ SELECT user,authentication_string,plugin,host FROM mysql.user;
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'CONTRASEÑA';
 FLUSH PRIVILEGES;
 SELECT user,authentication_string,plugin,host FROM mysql.user;
-
+exit
 ```
 - Entramos como administrador y creamos un segundo usuario:
 ```
@@ -229,6 +229,7 @@ sudo find /var/www/DOMINIO/ -type d -exec chmod 775 {} \;
 
 ## Creamos nuestros certificados
 `sudo certbot --nginx -d DOMINIO.com -d www.DOMINIO.com`
+`sudo certbot --nginx -d sub.DOMINIO.com`
 
 ## Editamos nuestra configuración del sitio en Nginx
 `sudo nano /etc/nginx/sites-available/DOMINIO`
