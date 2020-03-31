@@ -105,6 +105,12 @@ FLUSH PRIVILEGES;
 exit
 ```
 
+## Instalamos un nuevo usuario
+```
+adduser username
+usermod -aG sudo username
+```
+
 ## Instalamos complementos que usaremos más adelante
 ```
 sudo apt update
@@ -194,6 +200,8 @@ sudo apt upgrade
 ```
 composer create-project --prefer-dist laravel/laravel DOMINIO
 cd /var/www/DOMINIO
+
+cp .env.example .env
 ```
 
 - Instalación del Frontend Scaffolding
