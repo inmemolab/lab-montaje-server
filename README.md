@@ -75,9 +75,9 @@ sudo apt-get install libglib2.0-dev
 upload_max_filesize = 32M 
 post_max_size = 48M 
 memory_limit = 256M 
-max_execution_time = 600 
-max_input_vars = 3000 
+max_input_vars = 3000
 max_input_time = 1000
+max_execution_time = 600
 ```
 **Reiniciamos!**
 ```
