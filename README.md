@@ -102,6 +102,7 @@ mysql -u root -p
 CREATE USER 'USUARIO'@'localhost' IDENTIFIED BY 'CONTRASEÑA';
 GRANT ALL PRIVILEGES ON *.* TO 'USUARIO'@'localhost' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
+SELECT user,authentication_string,plugin,host FROM mysql.user;
 exit
 ```
 
