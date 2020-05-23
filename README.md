@@ -38,9 +38,9 @@ sudo systemctl enable nginx.service
 sudo ufw allow ssh
 sudo ufw allow http
 sudo ufw allow https
-sudo ufw allow 6001
-sudo ufw allow 3306
 sudo ufw allow OpenSSH
+sudo ufw allow 3306
+sudo ufw allow 6001
 ```
 **Importante:** debemos ir al panel de control del droplet y en networking/firewalls y agregamos dos reglas para poder abrir los puertos para accesar a mysql y para las comunicaciones del websocket
 
